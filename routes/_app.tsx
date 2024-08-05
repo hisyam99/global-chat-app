@@ -3,6 +3,9 @@ import Header from "@/components/Header.tsx";
 import Footer from "@/components/Footer.tsx";
 import type { State } from "@/plugins/session.ts";
 import { defineApp } from "$fresh/server.ts";
+import { installGlobals } from "https://deno.land/x/virtualstorage@0.1.0/mod.ts";
+
+installGlobals();
 
 export default defineApp<State>((_, ctx) => {
   return (
