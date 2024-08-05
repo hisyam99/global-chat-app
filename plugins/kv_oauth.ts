@@ -16,10 +16,9 @@ import { isStripeEnabled, stripe } from "@/utils/stripe.ts";
 import { getGoogleUser } from "@/utils/google.ts";
 import { getFacebookUser } from "@/utils/facebook.ts";
 import { getClerkUser } from "@/utils/clerk.ts";
-import { load } from "https://deno.land/std@0.224.0/dotenv/mod.ts";
 
-// Load environment variables from .env file
-const _env = await load();
+// // Load environment variables from .env file
+// const _env = await load();
 
 // Function to normalize user ID
 function normalizeUserId(profile: { id?: string; user_id?: string }) {
