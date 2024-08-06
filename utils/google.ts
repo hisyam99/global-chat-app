@@ -5,7 +5,7 @@ import { BadRequestError } from "@/utils/http.ts";
 export function isGoogleSetup() {
   try {
     createGoogleOAuthConfig({
-      redirectUri: `${Deno.env.get("REDIRECT_URI")}/callback`,
+      redirectUri: `${Deno.env.get("REDIRECT_URI")}/google/callback`,
       scope: "profile email",
     });
     return true;
