@@ -1,12 +1,12 @@
-# Deno SaaSKit
+# Global Chat App
 
 [![Discord Chat](https://img.shields.io/discord/684898665143206084?logo=discord&style=social)](https://discord.gg/deno)
-[![CI](https://github.com/denoland/saaskit/actions/workflows/ci.yml/badge.svg)](https://github.com/denoland/saaskit/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/denoland/saaskit/branch/main/graph/badge.svg?token=77F8TYTP13)](https://codecov.io/gh/denoland/saaskit)
+[![CI](https://github.com/hisyam99/global-chat-app/actions/workflows/ci.yml/badge.svg)](https://github.com/hisyam99/global-chat-app/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/hisyam99/global-chat-app/branch/main/graph/badge.svg?token=77F8TYTP13)](https://codecov.io/gh/hisyam99/global-chat-app)
 [![Built with the Deno Standard Library](https://raw.githubusercontent.com/denoland/deno_std/main/badge.svg)](https://deno.land/std)
 
-[Deno SaaSKit](https://deno.com/saaskit) is an open-sourced, highly performant
-template for building your SaaS quickly and easily.
+[Global Chat App](https://global-chat-app.deno.dev) is an open-sourced, highly performant
+template for building your Global Chat App quickly and easily.
 
 > Note: this project is in beta. Design, workflows, and user accounts are
 > subject to change.
@@ -42,8 +42,8 @@ To get started:
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/denoland/saaskit.git
-   cd saaskit
+   git clone https://github.com/hisyam99/global-chat-app.git
+   cd global-chat-app
    ```
 1. Create a new `.env` file.
 1. Navigate to GitHub's
@@ -172,8 +172,7 @@ See other examples of blog post files in [/posts](/posts).
 
 ### Themes
 
-You can customize theme options such as spacing, color, etc. By default, Deno
-SaaSKit comes with `primary` and `secondary` colors predefined within
+You can customize theme options such as spacing, color, etc. By default, Global Chat App comes with `primary` and `secondary` colors predefined within
 `tailwind.config.ts`. Change these values to match your desired color scheme.
 
 ### Cover Image
@@ -198,7 +197,7 @@ This section assumes that a
 
 ### Deploy to [Deno Deploy](https://deno.com/deploy)
 
-1. Clone this repository for your SaaSKit project.
+1. Clone this repository for your Global Chat App project.
 1. Update your `.github/workflows/deploy.yml` file as needed. Hints are in the
    file.
 1. Sign into [Deno Deploy](https://dash.deno.com/projects) with your GitHub
@@ -453,32 +452,3 @@ Example:
   "isSubscribed": true
 }
 ```
-
-## Goals and Philosophy
-
-For the user, the website should be fast, secure and have a design with clear
-intent. Additionally, the HTML should be well-structured and indexable by search
-engines. The defining metrics for these goals are:
-
-- A perfect [PageSpeed Insights](https://pagespeed.web.dev/) score.
-- Fully valid HTML, as measured by
-  [W3C's Markup Validation Service](https://validator.w3.org/).
-
-For the developer, the codebase should minimize the steps and amount of time
-required to get up and running. From there, customization and extension of the
-web app should be simple. The characteristics of a well-written codebase also
-apply, such as:
-
-- Easy to understand
-- Modular functionality
-- Clearly defined behavior with validation through tests
-
-## Community and Resources
-
-Join [the `#saaskit` channel in Deno's Discord](https://discord.gg/deno) to meet
-other SaaSKit developers, ask questions, and get unblocked.
-
-Here's a list of articles, how to guides, and videos about SaaSKit:
-
-- [Announcing Deno SaaSKit](https://deno.com/blog/announcing-deno-saaskit)
-- [Getting Started with SaaSKit (video walkthrough)](https://www.youtube.com/watch?v=1GYs3NbVCfE)
