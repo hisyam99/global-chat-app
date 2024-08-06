@@ -139,8 +139,7 @@ function EnterprisePricingCard() {
         <p>
           <IconCheckCircle class={CHECK_STYLES} />
           Direct line to{" "}
-          <a href="/users/lambtron" class="text-secondary">Andy</a> and{" "}
-          <a href="/users/iuioiua" class="text-secondary">Asher</a>
+          {/* <a href="/users/hisyam99" class="text-secondary">Hisyam</a> */}
         </p>
         <p>
           <IconCheckCircle class={CHECK_STYLES} />
