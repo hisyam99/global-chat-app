@@ -1,4 +1,3 @@
-// File: /plugins/session.ts
 // Copyright 2023-2024 the Deno authors. All rights reserved. MIT license.
 import { Plugin } from "$fresh/server.ts";
 import type { FreshContext } from "$fresh/server.ts";
