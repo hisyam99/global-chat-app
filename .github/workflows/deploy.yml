@@ -19,6 +19,7 @@ jobs:
       CLERK_CLIENT_ID: ${{ secrets.CLERK_CLIENT_ID }}
       CLERK_CLIENT_SECRET: ${{ secrets.CLERK_CLIENT_SECRET }}
       STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+      STRIPE_PREMIUM_PLAN_PRICE_ID: ${{ secrets.STRIPE_PREMIUM_PLAN_PRICE_ID }}
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy
