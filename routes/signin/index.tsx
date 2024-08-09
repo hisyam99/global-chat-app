@@ -1,31 +1,27 @@
-import { PageProps } from "$fresh/server.ts";
-import { Handlers } from "$fresh/server.ts";
+import { defineRoute } from "$fresh/server.ts";
 import LoginPage from "../../islands/LoginPage.tsx";
+import Head from "@/components/Head.tsx";
 import { State } from "../../plugins/session.ts";
 
-export const handler: Handlers<null, State> = {
-  GET(req, ctx) {
-    const { sessionUser } = ctx.state;
+export default defineRoute<State>((req, ctx) => {
+  const { sessionUser } = ctx.state;
 
-    if (sessionUser) {
-      const previousUrl = req.headers.get("Referer") || "/";
-      // Create a new Response object with the redirection
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: previousUrl,
-        },
-      });
-    }
+  if (sessionUser) {
+    const previousUrl = req.headers.get("Referer") || "/";
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: previousUrl,
+      },
+    });
+  }
 
-    return ctx.render(null);
-  },
-};
-
-export default function Home(props: PageProps) {
   return (
-    <div>
-      <LoginPage url={props.url} />
-    </div>
+    <>
+      <Head title="Sign In" href={ctx.url.href} />
+      <main class="flex-1 p-4 flex flex-col f-client-nav">
+        <LoginPage url={ctx.url} />
+      </main>
+    </>
   );
-}
+});
