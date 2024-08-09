@@ -67,8 +67,17 @@ export const handler: Handlers = {
       url.searchParams.get("consistency") === "strong" ? "strong" : "eventual"
     );
     const endTime = Date.now();
-    const res = await ctx.render({ data, latency: endTime - startTime });
-    res.headers.set("x-list-load-time", "" + (endTime - startTime));
-    return res;
+
+    // Create a new Response object with the rendered content and set headers upfront
+    const renderedContent = await ctx.render({
+      data,
+      latency: endTime - startTime,
+    });
+    const response = new Response(renderedContent.body, renderedContent);
+
+    // Set headers before returning the response
+    response.headers.set("x-list-load-time", `${endTime - startTime}`);
+
+    return response;
   },
 };

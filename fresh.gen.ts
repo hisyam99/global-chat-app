@@ -25,6 +25,7 @@ import * as $dashboard_stats from "./routes/dashboard/stats.tsx";
 import * as $dashboard_users from "./routes/dashboard/users.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $pricing from "./routes/pricing.tsx";
+import * as $signin_index from "./routes/signin/index.tsx";
 import * as $submit from "./routes/submit.tsx";
 import * as $users_login_ from "./routes/users/[login].tsx";
 import * as $welcome from "./routes/welcome.tsx";
@@ -33,6 +34,7 @@ import * as $ChatRoom from "./islands/ChatRoom.tsx";
 import * as $ChatView from "./islands/ChatView.tsx";
 import * as $ItemsList from "./islands/ItemsList.tsx";
 import * as $LoginModal from "./islands/LoginModal.tsx";
+import * as $LoginPage from "./islands/LoginPage.tsx";
 import * as $ThemeChanger from "./islands/ThemeChanger.tsx";
 import * as $UsersTable from "./islands/UsersTable.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -62,6 +64,7 @@ const manifest = {
     "./routes/dashboard/users.tsx": $dashboard_users,
     "./routes/index.tsx": $index,
     "./routes/pricing.tsx": $pricing,
+    "./routes/signin/index.tsx": $signin_index,
     "./routes/submit.tsx": $submit,
     "./routes/users/[login].tsx": $users_login_,
     "./routes/welcome.tsx": $welcome,
@@ -72,6 +75,7 @@ const manifest = {
     "./islands/ChatView.tsx": $ChatView,
     "./islands/ItemsList.tsx": $ItemsList,
     "./islands/LoginModal.tsx": $LoginModal,
+    "./islands/LoginPage.tsx": $LoginPage,
     "./islands/ThemeChanger.tsx": $ThemeChanger,
     "./islands/UsersTable.tsx": $UsersTable,
   },
