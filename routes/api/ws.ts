@@ -1,4 +1,4 @@
-import { kv } from "../../utils/db.ts";
+import { kv } from "@/utils/db.ts";
 
 export interface Message {
   id: string;

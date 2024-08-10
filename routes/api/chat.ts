@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
-import { db, loadMessages, writeMessages } from "../../services/database.ts";
+import { db, loadMessages, writeMessages } from "@/services/database.ts";
 
 const chatId = "global"; // Use a standardized chat ID
 

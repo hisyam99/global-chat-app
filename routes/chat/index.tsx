@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
-import ChatView from "../../islands/ChatView.tsx";
+import ChatView from "@/islands/ChatView.tsx";
 import { handler } from "../api/chat.ts";
-import { Message } from "../../shared/api.ts";
+import { Message } from "@/shared/api.ts";
 
 export { handler };
 

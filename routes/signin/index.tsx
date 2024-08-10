@@ -1,7 +1,7 @@
 import { defineRoute } from "$fresh/server.ts";
-import LoginPage from "../../islands/LoginPage.tsx";
+import LoginPage from "@/islands/LoginPage.tsx";
 import Head from "@/components/Head.tsx";
-import { State } from "../../plugins/session.ts";
+import { State } from "@/plugins/session.ts";
 
 export default defineRoute<State>((req, ctx) => {
   const { sessionUser } = ctx.state;
