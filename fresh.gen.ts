@@ -8,7 +8,8 @@ import * as $_app from "./routes/_app.tsx";
 import * as $account_index from "./routes/account/index.tsx";
 import * as $account_manage from "./routes/account/manage.ts";
 import * as $account_upgrade from "./routes/account/upgrade.ts";
-import * as $api_chat from "./routes/api/chat.ts";
+import * as $api_chat_sse from "./routes/api/chat_sse.ts";
+import * as $api_chat_ws from "./routes/api/chat_ws.ts";
 import * as $api_items_id_ from "./routes/api/items/[id].ts";
 import * as $api_items_index from "./routes/api/items/index.ts";
 import * as $api_me_votes from "./routes/api/me/votes.ts";
@@ -30,8 +31,10 @@ import * as $submit from "./routes/submit.tsx";
 import * as $users_login_ from "./routes/users/[login].tsx";
 import * as $welcome from "./routes/welcome.tsx";
 import * as $Chart from "./islands/Chart.tsx";
+import * as $ChatMessage from "./islands/ChatMessage.tsx";
 import * as $ChatRoom from "./islands/ChatRoom.tsx";
-import * as $ChatView from "./islands/ChatView.tsx";
+import * as $ChatViewSSE from "./islands/ChatViewSSE.tsx";
+import * as $ChatViewWS from "./islands/ChatViewWS.tsx";
 import * as $ItemsList from "./islands/ItemsList.tsx";
 import * as $LoginModal from "./islands/LoginModal.tsx";
 import * as $LoginPage from "./islands/LoginPage.tsx";
@@ -47,7 +50,8 @@ const manifest = {
     "./routes/account/index.tsx": $account_index,
     "./routes/account/manage.ts": $account_manage,
     "./routes/account/upgrade.ts": $account_upgrade,
-    "./routes/api/chat.ts": $api_chat,
+    "./routes/api/chat_sse.ts": $api_chat_sse,
+    "./routes/api/chat_ws.ts": $api_chat_ws,
     "./routes/api/items/[id].ts": $api_items_id_,
     "./routes/api/items/index.ts": $api_items_index,
     "./routes/api/me/votes.ts": $api_me_votes,
@@ -71,8 +75,10 @@ const manifest = {
   },
   islands: {
     "./islands/Chart.tsx": $Chart,
+    "./islands/ChatMessage.tsx": $ChatMessage,
     "./islands/ChatRoom.tsx": $ChatRoom,
-    "./islands/ChatView.tsx": $ChatView,
+    "./islands/ChatViewSSE.tsx": $ChatViewSSE,
+    "./islands/ChatViewWS.tsx": $ChatViewWS,
     "./islands/ItemsList.tsx": $ItemsList,
     "./islands/LoginModal.tsx": $LoginModal,
     "./islands/LoginPage.tsx": $LoginPage,

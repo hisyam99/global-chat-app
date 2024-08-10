@@ -1,23 +1,24 @@
-import { Head } from "$fresh/runtime.ts";
-import ChatView from "@/islands/ChatView.tsx";
-import { handler } from "../api/chat.ts";
-import { Message } from "@/shared/api.ts";
+import { defineRoute } from "$fresh/server.ts";
+import ChatViewSSE from "../../islands/ChatViewSSE.tsx";
+import Head from "@/components/Head.tsx";
+import { State } from "@/plugins/session.ts";
+import { loadMessages } from "@/services/database.ts";
 
-export { handler };
+export default defineRoute<State>(async (req, ctx) => {
+  const url = new URL(req.url);
+  const startTime = Date.now();
+  const consistency =
+    url.searchParams.get("consistency") === "strong" ? "strong" : "eventual";
+  const data = await loadMessages("global", consistency);
+  const endTime = Date.now();
+  const latency = endTime - startTime;
 
-export default function Home({
-  data: { data, latency },
-}: {
-  data: { data: Message[]; latency: number };
-}) {
   return (
     <>
-      <Head>
-        <title>Global Chat</title>
-      </Head>
-      <div class="p-4 mx-auto max-w-screen-md">
-        <ChatView initialData={data} latency={latency} />
-      </div>
+      <Head title="Global Chat" href={ctx.url.href} />
+      <main class="flex-1 p-4 flex flex-col f-client-nav">
+        <ChatViewSSE initialData={data} latency={latency} />
+      </main>
     </>
   );
-}
+});
