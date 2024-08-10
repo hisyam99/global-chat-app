@@ -20,11 +20,7 @@ export interface HeaderProps {
 export default function Header(props: HeaderProps) {
   return (
     <header class="site-bar-styles flex-col sm:flex-row">
-      <input
-        type="checkbox"
-        id="nav-toggle"
-        class="hidden peer"
-      />
+      <input type="checkbox" id="nav-toggle" class="hidden peer" />
 
       <div class="flex justify-between items-center peer-checked:[&_>div>label>#IconMenu]:hidden peer-checked:[&_>div>label>#IconX]:block">
         <a href="/" class="shrink-0">
@@ -36,7 +32,7 @@ export default function Header(props: HeaderProps) {
             class="size-12"
           />
         </a>
-        <ThemeChanger/>
+        <ThemeChanger />
         <div class="flex gap-4 items-center">
           <label
             tabIndex={0}
@@ -61,7 +57,9 @@ export default function Header(props: HeaderProps) {
         `}
       </script>
       <nav
-        class={"hidden flex-col gap-x-4 divide-y divide-solid sm:flex sm:items-center sm:flex-row sm:divide-y-0 peer-checked:flex"}
+        class={
+          "hidden flex-col gap-x-4 divide-y divide-solid sm:flex sm:items-center sm:flex-row sm:divide-y-0 peer-checked:flex"
+        }
       >
         <a
           href="/dashboard"
@@ -69,27 +67,30 @@ export default function Header(props: HeaderProps) {
         >
           Dashboard
         </a>
-        {isStripeEnabled() &&
-          (
-            <a
-              href="/pricing"
-              class="link-styles data-[current]:!text-black data-[current]:dark:!text-white nav-item"
-            >
-              Pricing
-            </a>
-          )}
-        {props.sessionUser
-          ? (
-            <a
-              href="/account"
-              class="link-styles data-[current]:!text-black data-[current]:dark:!text-white nav-item"
-            >
-              Account
-            </a>
-          )
-          : (
-            <LoginModal/>
-          )}
+        <a
+          href="/chat"
+          class="link-styles data-[ancestor]:!text-black data-[ancestor]:dark:!text-white nav-item"
+        >
+          Chat
+        </a>
+        {isStripeEnabled() && (
+          <a
+            href="/pricing"
+            class="link-styles data-[current]:!text-black data-[current]:dark:!text-white nav-item"
+          >
+            Pricing
+          </a>
+        )}
+        {props.sessionUser ? (
+          <a
+            href="/account"
+            class="link-styles data-[current]:!text-black data-[current]:dark:!text-white nav-item"
+          >
+            Account
+          </a>
+        ) : (
+          <LoginModal />
+        )}
         <div class="rounded-lg bg-gradient-to-tr from-secondary to-primary p-px">
           <a
             href="/submit"
